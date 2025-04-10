@@ -11,6 +11,8 @@ import SearchBooks from "./pages/books/SearchBooks";
 import IssueBook from "./pages/books/IssueBook";
 import ReturnBook from "./pages/books/ReturnBook";
 import AddBook from "./pages/books/AddBook";
+import AddMembership from "./pages/membership/AddMembership";
+import UpdateMembership from "./pages/membership/UpdateMembership";
 import Unauthorized from "./pages/Unauthorized";
 import NotFound from "./pages/NotFound";
 import { useRequireAuth } from "./hooks/use-require-auth";
@@ -48,8 +50,8 @@ const App = () => (
             <Route path="/books/return" element={<ProtectedRoute element={<ReturnBook />} />} />
             <Route path="/books/add" element={<ProtectedRoute element={<AddBook />} requiredRole="admin" />} />
             <Route path="/books/update" element={<ProtectedRoute element={<Dashboard />} requiredRole="admin" />} />
-            <Route path="/membership/add" element={<ProtectedRoute element={<Dashboard />} requiredRole="admin" />} />
-            <Route path="/membership/update" element={<ProtectedRoute element={<Dashboard />} requiredRole="admin" />} />
+            <Route path="/membership/add" element={<ProtectedRoute element={<AddMembership />} requiredRole="admin" />} />
+            <Route path="/membership/update" element={<ProtectedRoute element={<UpdateMembership />} requiredRole="admin" />} />
             <Route path="/users/manage" element={<ProtectedRoute element={<Dashboard />} requiredRole="admin" />} />
             <Route path="/unauthorized" element={<ProtectedRoute element={<Unauthorized />} />} />
             <Route path="*" element={<NotFound />} />

@@ -64,9 +64,13 @@ export default function AddBook() {
     setIsSubmitting(true);
     
     try {
-      // Add the book to the library
+      // Fixed: Ensure all required properties are provided and not optional
       const newBook = addBook({
-        ...data,
+        type: data.type,
+        title: data.title,
+        author: data.author,
+        serialNumber: data.serialNumber,
+        category: data.category,
         available: true
       });
       
