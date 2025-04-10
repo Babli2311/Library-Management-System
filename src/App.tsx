@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -9,6 +10,7 @@ import Dashboard from "./pages/Dashboard";
 import SearchBooks from "./pages/books/SearchBooks";
 import IssueBook from "./pages/books/IssueBook";
 import ReturnBook from "./pages/books/ReturnBook";
+import AddBook from "./pages/books/AddBook";
 import Unauthorized from "./pages/Unauthorized";
 import NotFound from "./pages/NotFound";
 import { useRequireAuth } from "./hooks/use-require-auth";
@@ -44,7 +46,7 @@ const App = () => (
             <Route path="/books/search" element={<ProtectedRoute element={<SearchBooks />} />} />
             <Route path="/books/issue" element={<ProtectedRoute element={<IssueBook />} />} />
             <Route path="/books/return" element={<ProtectedRoute element={<ReturnBook />} />} />
-            <Route path="/books/add" element={<ProtectedRoute element={<Dashboard />} requiredRole="admin" />} />
+            <Route path="/books/add" element={<ProtectedRoute element={<AddBook />} requiredRole="admin" />} />
             <Route path="/books/update" element={<ProtectedRoute element={<Dashboard />} requiredRole="admin" />} />
             <Route path="/membership/add" element={<ProtectedRoute element={<Dashboard />} requiredRole="admin" />} />
             <Route path="/membership/update" element={<ProtectedRoute element={<Dashboard />} requiredRole="admin" />} />
